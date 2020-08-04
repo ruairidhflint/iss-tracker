@@ -1,0 +1,19 @@
+{
+  "name": "iss-tracker",
+  "version": "1.0.0",
+  "description": "An interactive display of the current location of the International Space Station using Google Maps API and Open Notify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruairidhflint/iss-tracker.git"
+  },
+  "author": "Ruairidh Flint",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruairidhflint/iss-tracker/issues"
+  },
+  "homepage": "https://github.com/ruairidhflint/iss-tracker#readme"
+}
