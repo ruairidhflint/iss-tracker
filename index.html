@@ -3,11 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="src/images/favicon.png" />
     <title>ISS</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello, world.</h1>
-    <div id="test"></div>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        const options = {
+          zoom: 3.1,
+          center: { lat: 42.3601, lng: -71.0589 },
+        };
+
+        let map = new google.maps.Map(document.getElementById('map'), options);
+        var marker = new google.maps.Marker({
+          position: { lat: 42.3601, lng: -71.0589 },
+          icon:
+            'src/images/marker.png',
+          map: map,
+        });
+        Ì;
+      }
+    </script>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTbCVuYsGZtm6UNOphzZCNR-1x-6LGE8c&callback=initMap"
+    ></script>
     <script src="dist/bundle.js"></script>
   </body>
 </html>

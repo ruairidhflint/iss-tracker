@@ -92,21 +92,18 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
-const testDOM = document.getElementById('test');
-
-window.onload = function test() {
-  setInterval(() => {
-    Object(_helpers_fetch__WEBPACK_IMPORTED_MODULE_0__["issLocation"])().then(res => {
-      writeToDom(res);
-    });
-  }, 2000);
-};
-
-function writeToDom(data) {
-  const h3 = document.createElement('h3');
-  h3.textContent = `Longitude: ${data.longitude}, Latitude: ${data.latitude}`;
-  testDOM.append(h3);
-}
+const testDOM = document.getElementById('test'); // window.onload = function test() {
+//   setInterval(() => {
+//     issLocation().then((res) => {
+//       writeToDom(res);
+//     });
+//   }, 2000);
+// };
+// function writeToDom(data) {
+//   const h3 = document.createElement('h3');
+//   h3.textContent = `Longitude: ${data.longitude}, Latitude: ${data.latitude}`;
+//   testDOM.append(h3);
+// }
 
 /***/ }),
 /* 1 */
