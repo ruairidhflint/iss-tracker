@@ -4,7 +4,7 @@
   "description": "An interactive display of the current location of the International Space Station using Google Maps API and Open Notify.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "webpack",
   },
   "repository": {
     "type": "git",
