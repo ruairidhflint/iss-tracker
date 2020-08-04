@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/ruairidhflint/iss-tracker/issues"
   },
-  "homepage": "https://github.com/ruairidhflint/iss-tracker#readme"
+  "homepage": "https://github.com/ruairidhflint/iss-tracker#readme",
+  "dependencies": {
+    "@babel/core": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
 }
