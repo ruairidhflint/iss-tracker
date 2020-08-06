@@ -18,7 +18,7 @@ window.onload = function initMap() {
 function renderToMap() {
   issLocation().then((res) => {
     const options = {
-      zoom: 4,
+      zoom: 3.7,
       center: { lat: Number(res.latitude), lng: Number(res.longitude) },
       scrollwheel: false,
       streetViewControl: false,

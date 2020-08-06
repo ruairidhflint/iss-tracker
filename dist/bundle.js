@@ -109,7 +109,7 @@ window.onload = function initMap() {
 function renderToMap() {
   Object(_helpers_fetch__WEBPACK_IMPORTED_MODULE_0__["issLocation"])().then(res => {
     const options = {
-      zoom: 4,
+      zoom: 3.7,
       center: {
         lat: Number(res.latitude),
         lng: Number(res.longitude)
@@ -158,8 +158,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 const apiURL = 'http://api.open-notify.org/iss-now.json';
+const urlTwo = 'https://api.wheretheiss.at/v1/satellites/25544'; // export function issLocation() {
+//   return axios
+//     .get(apiURL)
+//     .then((res) => res.data.iss_position)
+//     .catch((err) => console.log(err));
+// }
+
 function issLocation() {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(apiURL).then(res => res.data.iss_position).catch(err => console.log(err));
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(urlTwo).then(res => res.data).catch(err => console.log(err));
 }
 
 /***/ }),
