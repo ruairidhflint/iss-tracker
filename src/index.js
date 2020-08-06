@@ -34,7 +34,7 @@ function renderToMap() {
         lng: Number(res.longitude),
       },
       icon: 'src/images/marker1.png',
-      map: map
+      map: map,
     });
 
     setInterval(() => {
@@ -56,3 +56,6 @@ function renderToMap() {
     }
   });
 }
+
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
