@@ -109,7 +109,7 @@ window.onload = function initMap() {
 function renderToMap() {
   Object(_helpers_fetch__WEBPACK_IMPORTED_MODULE_0__["issLocation"])().then(res => {
     const options = {
-      zoom: 3,
+      zoom: 4,
       center: {
         lat: Number(res.latitude),
         lng: Number(res.longitude)
@@ -132,7 +132,7 @@ function renderToMap() {
       Object(_helpers_fetch__WEBPACK_IMPORTED_MODULE_0__["issLocation"])().then(res => {
         createMarker(res);
       });
-    }, 1000);
+    }, 3000);
 
     function createMarker(position) {
       const marker = new google.maps.Marker({

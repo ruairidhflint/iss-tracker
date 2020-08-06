@@ -18,7 +18,7 @@ window.onload = function initMap() {
 function renderToMap() {
   issLocation().then((res) => {
     const options = {
-      zoom: 3,
+      zoom: 4,
       center: { lat: Number(res.latitude), lng: Number(res.longitude) },
       scrollwheel: false,
       streetViewControl: false,
@@ -41,7 +41,7 @@ function renderToMap() {
       issLocation().then((res) => {
         createMarker(res);
       });
-    }, 1000);
+    }, 3000);
 
     function createMarker(position) {
       const marker = new google.maps.Marker({
