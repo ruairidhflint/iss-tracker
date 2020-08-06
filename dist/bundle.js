@@ -103,36 +103,49 @@ const testDOM = document.getElementById('test'); // window.onload = function tes
 // };
 
 window.onload = function initMap() {
-  const options = {
-    zoom: 3,
-    center: {
-      lat: -45.6533,
-      lng: 68.8154
-    },
-    scrollwheel: false,
-    streetViewControl: false,
-    fullscreenControl: true,
-    styles: _helpers_styles__WEBPACK_IMPORTED_MODULE_1__["styles"]
-  };
-  let map = new google.maps.Map(document.getElementById('map'), options);
-  var marker = new google.maps.Marker({
-    position: {
-      lat: -45.6533,
-      lng: 68.8154
-    },
-    animation: google.maps.Animation.DROP,
-    icon: 'src/images/marker1.png',
-    map: map
-  });
-  var marker2 = new google.maps.Marker({
-    position: {
-      lat: -55.6533,
-      lng: 58.8154
-    },
-    icon: 'src/images/marker1.png',
-    map: map
-  });
+  renderToMap();
 };
+
+function renderToMap() {
+  Object(_helpers_fetch__WEBPACK_IMPORTED_MODULE_0__["issLocation"])().then(res => {
+    const options = {
+      zoom: 3,
+      center: {
+        lat: Number(res.latitude),
+        lng: Number(res.longitude)
+      },
+      scrollwheel: false,
+      streetViewControl: false,
+      fullscreenControl: true,
+      styles: _helpers_styles__WEBPACK_IMPORTED_MODULE_1__["styles"]
+    };
+    let map = new google.maps.Map(document.getElementById('map'), options);
+    const initialMarker = new google.maps.Marker({
+      position: {
+        lat: Number(res.latitude),
+        lng: Number(res.longitude)
+      },
+      icon: 'src/images/marker1.png',
+      map: map
+    });
+    setInterval(() => {
+      Object(_helpers_fetch__WEBPACK_IMPORTED_MODULE_0__["issLocation"])().then(res => {
+        createMarker(res);
+      });
+    }, 1000);
+
+    function createMarker(position) {
+      const marker = new google.maps.Marker({
+        position: {
+          lat: Number(position.latitude),
+          lng: Number(position.longitude)
+        },
+        icon: 'src/images/marker1.png'
+      });
+      return marker.setMap(map);
+    }
+  });
+}
 
 /***/ }),
 /* 1 */
