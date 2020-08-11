@@ -1,16 +1,6 @@
 import { issLocation } from './helpers/fetch';
 import { styles } from './helpers/styles';
 
-const testDOM = document.getElementById('test');
-
-// window.onload = function test() {
-//   setInterval(() => {
-//     issLocation().then((res) => {
-//       console.log(res);
-//     });
-//   }, 2000);
-// };
-
 window.onload = function initMap() {
   renderToMap();
 };
@@ -57,7 +47,8 @@ function renderToMap() {
   });
 }
 
-// Adjust 100vh to match phone screen size
 
+
+// Adjust 100vh to match phone screen size
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
