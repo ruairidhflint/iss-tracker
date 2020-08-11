@@ -94,13 +94,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(29);
 
 
-const testDOM = document.getElementById('test'); // window.onload = function test() {
-//   setInterval(() => {
-//     issLocation().then((res) => {
-//       console.log(res);
-//     });
-//   }, 2000);
-// };
 
 window.onload = function initMap() {
   renderToMap();
@@ -145,7 +138,8 @@ function renderToMap() {
       return marker.setMap(map);
     }
   });
-}
+} // Adjust 100vh to match phone screen size
+
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -160,16 +154,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-const apiURL = 'http://api.open-notify.org/iss-now.json';
-const urlTwo = 'https://api.wheretheiss.at/v1/satellites/25544'; // export function issLocation() {
-//   return axios
-//     .get(apiURL)
-//     .then((res) => res.data.iss_position)
-//     .catch((err) => console.log(err));
-// }
-
+const apiURL = 'https://api.wheretheiss.at/v1/satellites/25544';
 function issLocation() {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(urlTwo).then(res => res.data).catch(err => console.log(err));
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(apiURL).then(res => res.data).catch(err => console.log(err));
 }
 
 /***/ }),
