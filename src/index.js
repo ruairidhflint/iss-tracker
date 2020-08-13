@@ -47,8 +47,6 @@ function renderToMap() {
   });
 }
 
-
-
 // Adjust 100vh to match phone screen size
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
